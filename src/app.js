@@ -4,3 +4,5 @@
 // export default () => {
 //   console.log(classes.app);
 // };
+
+export const hello = () => {'hello'};
