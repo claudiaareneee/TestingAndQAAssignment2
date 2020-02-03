@@ -1,6 +1,6 @@
 // import a CSS module
-import classes from './app.css';
+// import classes from './app.css';
 
-export default () => {
-  console.log(classes.app);
-};
+// export default () => {
+//   console.log(classes.app);
+// };
