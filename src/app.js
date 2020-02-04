@@ -1,5 +1,3 @@
-export const hello = () => {return 'hello'};
-
 export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
   const weight = weightPounds * 0.45359237;
   const height = (heightFeet * 12.0 + heightInches) * .0254;

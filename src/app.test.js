@@ -1,12 +1,4 @@
-import {hello, calculateBmi} from './app';
-
-console.log(hello());
-
-describe('hello', ()=>{
-    it('should output hello', () => {
-        expect(hello()).toBe('hello');
-    })
-})
+import {calculateBmi} from './app';
 
 // TODO: ASK ABOUT ROUNDING 5 11 215
 describe('calculateBmi', () => {
