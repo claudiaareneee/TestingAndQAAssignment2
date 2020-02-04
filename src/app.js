@@ -1,15 +1,23 @@
-// import a CSS module
-// import classes from './app.css';
-
-// export default () => {
-//   console.log(classes.app);
-// };
-
 export const hello = () => {return 'hello'};
 
-export const add = (x, y) => {
-  if(typeof(x) !== "number" || typeof(y) !== "number")
-    return (null);
+export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
+  const weight = weightPounds * 0.45359237;
+  const height = (heightFeet * 12.0 + heightInches) * .0254;
 
-  return(x + y);
+  let answer = height*height;
+  answer = weight/answer;
+
+  console.log(heightFeet, heightInches, weightPounds)
+  console.log(answer);
+
+  if (answer < 18.5)
+    return "underweight";
+  else if (answer < 25)
+    return "normal weight";
+  else if (answer < 30)
+    return "overweight";
+  else 
+    return "obese";
+
+  return null;
 };
