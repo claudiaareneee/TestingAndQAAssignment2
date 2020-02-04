@@ -19,3 +19,7 @@ export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
 
   return null;
 };
+
+export const calculateRetirement = (currentAge, salary, percentageSaved, goal) =>{
+  return null
+}

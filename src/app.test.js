@@ -1,4 +1,4 @@
-import {calculateBmi} from './app';
+import {calculateBmi, calculateRetirement} from './app';
 
 // TODO: ASK ABOUT ROUNDING 5 11 215
 describe('calculateBmi', () => {
@@ -48,5 +48,49 @@ describe('calculateBmi', () => {
         expect(calculateBmi(5, 8, 110)).not.toBe('obese');
         expect(calculateBmi(5, 6, 150)).not.toBe('obese');
         expect(calculateBmi(5, 11, 180)).not.toBe('obese');
+    });
+});
+
+describe('calculateRetirement', () => {
+    // age = (goal/(sallary*(percentageSaved+matchRate))) + age
+    it('should report the correct age with percentage under or at .35', () => {
+        
+    });
+
+    it('should report the correct age with percentage above .35', () => {
+        
+    });
+
+    it('should report null when goal is unattainable', () => {
+        
+    });
+
+    it('should report null when current age is invalid', () => {
+        expect(calculateRetirement("a", 100000, .20, 401000)).toBeNull();
+        expect(calculateRetirement(-6, 100000, .20, 401000)).toBeNull();
+        expect(calculateRetirement(100, 100000, .20, 401000)).toBeNull();
+        expect(calculateRetirement({}, 100000, .20, 401000)).toBeNull();
+    });
+
+    it('should report null when salary is invalid', () => {
+        expect(calculateRetirement(22, "100000", .20, 401000)).toBeNull();
+        expect(calculateRetirement(22, -5, .20, 401000)).toBeNull();
+        expect(calculateRetirement(22, 0, .20, 401000)).toBeNull();
+        expect(calculateRetirement(22, false, .20, 401000)).toBeNull();
+        expect(calculateRetirement(22, {}, .20, 401000)).toBeNull();
+    });
+
+    it('should report null when percentage is invalid', () => {
+        expect(calculateRetirement(22, 100000, ".2", 401000)).toBeNull();
+        expect(calculateRetirement(22, 100000, -0.6, 401000)).toBeNull();
+        expect(calculateRetirement(22, 100000, 0, 401000)).toBeNull();
+        expect(calculateRetirement(22, 100000, {}, 401000)).toBeNull();
+    });
+
+    it('should report null when goal is invalid', () => {
+        expect(calculateRetirement(22, 100000, .20, "401000")).toBeNull();
+        expect(calculateRetirement(22, 100000, .20, -401000)).toBeNull();
+        expect(calculateRetirement(22, 100000, .20, false)).toBeNull();
+        expect(calculateRetirement(22, 100000, .20, {})).toBeNull();
     });
 });
