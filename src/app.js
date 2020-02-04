@@ -5,4 +5,4 @@
 //   console.log(classes.app);
 // };
 
-export const hello = () => {'hello'};
+export const hello = () => {return 'hello'};
