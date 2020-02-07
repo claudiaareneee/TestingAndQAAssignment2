@@ -54,7 +54,7 @@ describe('calculateBmi', () => {
 describe('calculateRetirement', () => {
     // age = (goal/(sallary*(percentageSaved+matchRate))) + age
     it('should report the correct age with percentage under or at .35', () => {
-        
+        expect(calculateRetirement(40,60000, .15,1000000)).toBeCloseTo(95.55, .05);
     });
 
     it('should report the correct age with percentage above .35', () => {
@@ -62,7 +62,10 @@ describe('calculateRetirement', () => {
     });
 
     it('should report null when goal is unattainable', () => {
-        
+        expect(calculateRetirement(20, 16500, .15, 401000)).toBeNull();
+        expect(calculateRetirement(30, 40000, .10, 604000)).toBeNull();
+        expect(calculateRetirement(30, 40000, .10, 604000)).toBeNull();
+        expect(calculateRetirement(40, 55000, .15, 1000000)).toBeNull();
     });
 
     it('should report null when current age is invalid', () => {
@@ -82,6 +85,7 @@ describe('calculateRetirement', () => {
 
     it('should report null when percentage is invalid', () => {
         expect(calculateRetirement(22, 100000, ".2", 401000)).toBeNull();
+        expect(calculateRetirement(22, 100000, 101, 401000)).toBeNull();
         expect(calculateRetirement(22, 100000, -0.6, 401000)).toBeNull();
         expect(calculateRetirement(22, 100000, 0, 401000)).toBeNull();
         expect(calculateRetirement(22, 100000, {}, 401000)).toBeNull();

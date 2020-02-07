@@ -1,6 +1,6 @@
 export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
-  const weight = weightPounds * 0.45359237;
-  const height = (heightFeet * 12.0 + heightInches) * .0254;
+  const weight = weightPounds * 0.45;
+  const height = ((heightFeet * 12.0) + heightInches) * .025;
 
   let answer = height*height;
   answer = weight/answer;
@@ -8,14 +8,16 @@ export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
   console.log(heightFeet, heightInches, weightPounds)
   console.log(answer);
 
-  if (answer < 18.5)
-    return "underweight";
+  let answerString = answer.toString();
+
+  if (answer <= 18.5)
+    return answerString + " underweight";
   else if (answer < 25)
-    return "normal weight";
+    return answerString + " normal weight";
   else if (answer < 30)
-    return "overweight";
+    return answerString + " overweight";
   else 
-    return "obese";
+    return answerString + " obese";
 
   return null;
 };
