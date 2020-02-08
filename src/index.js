@@ -12,10 +12,20 @@ calculateBMIButton.addEventListener('click', ()=> {
     let weightPounds = document.getElementById("weightPounds").value;
     let bmiOutput = document.getElementById("bmiOutput");
 
-    let bmi = calculateBmi(Number(heightFeet), Number(heightInches), Number(weightPounds))
+    let errorMessage = "";
+    if(isNaN(Number(heightFeet)) || isNaN(Number(heightInches)) || heightFeet == "" || heightInches == "" ||Number(heightFeet)<=0 ||Number(heightInches)<=0 )
+        errorMessage += "Height should have a number value greater than 0; ";
+    if(isNaN(Number(weightPounds)) || weightPounds == "" || Number(weightPounds)<=0)
+        errorMessage += "Weight should have a number value greater than 0; ";
     
-    if (bmi != null)
-        bmiOutput.innerHTML = "BMI: " + bmi;
+    
+    if (errorMessage != ""){
+        bmiOutput.innerHTML = errorMessage;
+    } else {
+        let bmi = calculateBmi(Number(heightFeet), Number(heightInches), Number(weightPounds));
+        bmiOutput.innerHTML = bmi;
+    }
+    
 });
 
 let calculateRetirementButton = document.getElementById("calcRetirementButton");
@@ -29,6 +39,6 @@ calculateRetirementButton.addEventListener('click', ()=> {
     let retirementAge = calculateRetirement(Number(currentAge), Number(salary), Number(percentage), Number(goal));
     
     if (retirementAge != null)
-        retirementOutput.innerHTML = "Retirement age: " + retirementAge;
+        retirementOutput.innerHTML = retirementAge;
 });
 
