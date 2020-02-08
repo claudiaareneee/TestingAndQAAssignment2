@@ -5,23 +5,37 @@ export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
   let answer = height*height;
   answer = weight/answer;
 
-  console.log(heightFeet, heightInches, weightPounds)
-  console.log(answer);
+  // console.log(heightFeet, heightInches, weightPounds)
+  // console.log(answer);
 
-  let answerString = answer.toString();
+  // answer = Math.round((answer + Number.EPSILON) * 10) / 10
+  answer = answer.toFixed(1)
 
-  if (answer <= 18.5)
+  let answerString = "BMI: " + answer.toString();
+
+  if (answer < 18.5)
     return answerString + " underweight";
   else if (answer < 25)
     return answerString + " normal weight";
   else if (answer < 30)
     return answerString + " overweight";
-  else 
+  else if (answer >= 30) 
     return answerString + " obese";
-
-  return null;
+  else
+    return null;
 };
 
+// age = (goal/(sallary*(percentageSaved*1.35))) + age
 export const calculateRetirement = (currentAge, salary, percentageSaved, goal) =>{
-  return null
+  let age = (goal / (salary * (percentageSaved*1.35/100))) + currentAge
+  age = Math.ceil(age);
+
+  if (age <= 100){
+    let answerString = "Retirement age: " + age.toString() + ", Goal is attainable";
+    return answerString
+
+  } else {
+    let answerString = "Retirement age: " + age.toString() + ", Goal is unattainable";
+    return answerString
+  }
 }
