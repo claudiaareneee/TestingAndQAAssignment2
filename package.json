@@ -4,6 +4,7 @@
   "description": "Learning test driven development",
   "main": "index.js",
   "scripts": {
+    "start": "parcel build index.html",
     "test": "jest --watchAll"
   },
   "repository": {
