@@ -1,34 +1,30 @@
 {
-  "name": "testing_and_qa_assignment2",
+  "name": "qa_assignment",
   "version": "1.0.0",
-  "description": "Learning test driven development",
+  "description": "This is for Assignment 3 and 4 for Testing and QA",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html --port=port",
-    "test": "jest --watchAll"
+    "start": "node test/app.js",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/claudiaareneee/TestingAndQAAssignment2.git"
-  },
-  "bugs": {
-    "url": "https://github.com/claudiaareneee/TestingAndQAAssignment2/issues"
-  },
-  "homepage": "https://github.com/claudiaareneee/TestingAndQAAssignment2#readme",
-  "keywords": [],
   "author": "Claudia Nelson",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "babel-preset-env": "^1.6.1",
+    "express": "^4.17.1",
     "jest": "^25.1.0",
-    "parcel-bundler": "^1.7.0"
+    "jest-cli": "^25.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1",
+    "webpack": "^4.42.1",
+    "webpack-dev-middleware": "^3.7.2"
   },
   "jest": {
-    "verbose": true,
-    "testURL": "http://localhost:1234/"
-  },
-  "dependencies": {}
+    "preset": "jest-puppeteer",
+    "globals": {
+      "PATH": "http://localhost:4444"
+    },
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ]
+  }
 }
