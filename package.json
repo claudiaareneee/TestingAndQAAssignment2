@@ -4,8 +4,8 @@
   "description": "Learning test driven development",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html --port=port",
-    "test": "jest --watchAll"
+    "start": "node app.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -19,16 +19,10 @@
   "author": "Claudia Nelson",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "babel-preset-env": "^1.6.1",
-    "jest": "^25.1.0",
-    "parcel-bundler": "^1.7.0"
+    "mocha": "^4.0.1"
   },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost:1234/"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
 }

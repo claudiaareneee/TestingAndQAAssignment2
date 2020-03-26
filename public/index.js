@@ -1,10 +1,3 @@
-// import app from './app';
-
-// app();
-
-import './app';
-import { calculateBmi, calculateRetirement } from './app';
-
 let calculateBMIButton = document.getElementById("calcBMIButton");
 calculateBMIButton.addEventListener('click', ()=> {
     let heightFeet = document.getElementById("heightFeet").value;
@@ -24,8 +17,12 @@ calculateBMIButton.addEventListener('click', ()=> {
     if (errorMessage != ""){
         bmiOutput.innerHTML = errorMessage;
     } else {
-        let bmi = calculateBmi(Number(heightFeet), Number(heightInches), Number(weightPounds));
-        bmiOutput.innerHTML = bmi;
+        console.log("proper bmi data");
+        socket.emit('calculate_bmi', {heightFeet: Number(heightFeet), heightInches: Number(heightInches), weightPounds: Number(weightPounds)});
+        socket.on('recieve_bmi', function(bmi){ 
+            console.log("client received response");
+			bmiOutput.innerHTML = bmi;
+		});
     }
     
 });
@@ -76,8 +73,11 @@ calculateRetirementButton.addEventListener('click', ()=> {
     if (errorMessage != "")
         retirementOutput.innerHTML = errorMessage;
     else {
-        let retirementAge = calculateRetirement(currentAge, salary, percentage, goal);
-        retirementOutput.innerHTML = retirementAge;
+        console.log("proper retirement data");
+        socket.emit('calculate_retirement', {currentAge: Number(currentAge), salary: Number(salary), percentage: Number(percentage), goal: Number(goal)});
+        socket.on('recieve_retirement', function(age){ 
+            console.log("client received response");
+			retirementOutput.innerHTML = age;
+		});
     }
 });
-
