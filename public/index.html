@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <body>
     <h1>BMI Calculator</h1>
     <input id="heightFeet" type="text" placeholder="Height (feet)">
-    <input id="heightInches"" type="text" placeholder="Height (inches)">
+    <input id="heightInches"" type=" text" placeholder="Height (inches)">
     <input id="weightPounds" type="text" placeholder="Weight (pounds)">
     <button id="calcBMIButton">Calculate BMI</button>
     <p id="bmiOutput">BMI: </p>
@@ -16,8 +17,12 @@
     <button id="calcRetirementButton">Calculate Retirement</button>
     <p id="retirementOutput">Retirement age: </p>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
 
-    <script src="./src/index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

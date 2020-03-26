@@ -1,4 +1,4 @@
-export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
+const calculateBmi = (heightFeet, heightInches, weightPounds) => {
   const weight = weightPounds * 0.45;
   const height = ((heightFeet * 12.0) + heightInches) * .025;
 
@@ -26,7 +26,7 @@ export const calculateBmi = (heightFeet, heightInches, weightPounds) => {
 };
 
 // age = (goal/(sallary*(percentageSaved*1.35))) + age
-export const calculateRetirement = (currentAge, salary, percentageSaved, goal) =>{
+const calculateRetirement = (currentAge, salary, percentageSaved, goal) =>{
   let age = (goal / (salary * (percentageSaved*1.35/100))) + currentAge
   age = Math.ceil(age);
 
@@ -38,4 +38,9 @@ export const calculateRetirement = (currentAge, salary, percentageSaved, goal) =
     let answerString = "Retirement age: " + age.toString() + ", Goal is unattainable";
     return answerString
   }
+}
+
+module.exports = {
+  calculateBmi,
+  calculateRetirement
 }
