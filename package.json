@@ -1,14 +1,23 @@
 {
-  "name": "calc.js",
+  "name": "testing_and_qa_assignment2",
   "version": "1.0.0",
-  "description": "A simple calculator application built with Node.js",
+  "description": "Learning test driven development",
   "main": "index.js",
   "scripts": {
-    "start": "node app",
+    "start": "node app.js",
     "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiaareneee/TestingAndQAAssignment2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/claudiaareneee/TestingAndQAAssignment2/issues"
+  },
+  "homepage": "https://github.com/claudiaareneee/TestingAndQAAssignment2#readme",
+  "keywords": [],
+  "author": "Claudia Nelson",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^4.0.1"
   },
