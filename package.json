@@ -19,6 +19,7 @@
   "author": "Claudia Nelson",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.11",
     "mocha": "^4.0.1"
   },
   "dependencies": {
