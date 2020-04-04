@@ -1,6 +1,19 @@
+dist: bionic
+
+addons:
+  firefox: latest
+  chrome: stable
+
+services:
+  - xvfb
+
 language: node_js
 node_js:
   - 12
+
+before_script:
+  - fluxbox >/dev/null 2>&1 &
+  - sleep 3
 
 before_install:
   - stty cols 80
