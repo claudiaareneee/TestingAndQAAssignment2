@@ -1,6 +1,6 @@
 # QA Continuous Integration Assignment
 
-[![Build Status](https://travis-ci.com/claudiaareneee/TestingAndQAAssignment2.svg?branch=master)](https://travis-ci.com/claudiaareneee/TestingAndQAAssignment2) [![Coverage Status](https://coveralls.io/repos/github/claudiaareneee/TestingAndQAAssignment2/badge.svg?branch=master)](https://coveralls.io/github/claudiaareneee/TestingAndQAAssignment2?branch=master)
+[![Build Status](https://travis-ci.com/claudiaareneee/TestingAndQAAssignment2.svg?branch=master)](https://travis-ci.com/claudiaareneee/TestingAndQAAssignment2) [![Coverage Status](https://coveralls.io/repos/github/claudiaareneee/TestingAndQAAssignment2/badge.svg?branch=master)](https://coveralls.io/github/claudiaareneee/TestingAndQAAssignment2?branch=master)</br>
 [Staging Environment](https://obscure-headland-29999.herokuapp.com/) · [Production Environment](https://powerful-ravine-59414.herokuapp.com/)
 
 ## Objective
