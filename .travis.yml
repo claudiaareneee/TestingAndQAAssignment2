@@ -2,4 +2,7 @@ language: node_js
 node_js:
   - 12
 
+before_install:
+  - stty cols 80
+
 after_success: npm run coverage
