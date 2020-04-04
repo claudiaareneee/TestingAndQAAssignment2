@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "nyc --reporter=html --reporter=text mocha"
+    "test": "nyc --reporter=html --reporter=text mocha && testcafe chrome endtoendtest.js --app \"npm start\""
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "testcafe": "^1.8.3"
   }
 }
