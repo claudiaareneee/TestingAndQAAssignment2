@@ -28,7 +28,7 @@
     "nyc": "^15.0.0"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "socket.io": "^2.3.0",
     "testcafe": "^1.8.3"
   }
